@@ -64,7 +64,8 @@ public class App {
             case 3:
                 System.out.println("Hola bienvenido al sistema de Registro del consultorio");
 
-                System.out.println("ingresa el numero de tu consultorio Recuerda que cada consultorio tine una capacidad max : 10");
+                System.out.println("ingresa el Consultorio mas sercano a tu residencia");
+                System.out.println("Recuerda que tenemos 10 en todo Medellin");
                  int numConsultorio = sc.nextInt();
 
                 System.out.println("Ingresa el piso del consultorio");
@@ -78,6 +79,7 @@ public class App {
              
                 }else{
                     System.out.println("Error : Solo tenemos 10 Consultorios en el area Metropolitana");
+                    break;
                 } 
                    
                 break;
