@@ -21,12 +21,8 @@ public class Consultorio {
     }
 
     public void setNumConsultorio(int numConsultorio) {
-        if ( numConsultorio > 0 && numConsultorio <= 10){
              this.numConsultorio = numConsultorio;
-             this.estado = "Disponible";
-        }else{
-            System.out.println("Solo tenemos 10 consultorios en toda el area Metropolitana");
-        }
+        
     }
 
     public int getPisoConsultorio() {
@@ -47,8 +43,7 @@ public class Consultorio {
 
     @Override
     public String toString() {
-        return "Consultorio [numConsultorio=" + numConsultorio + ", pisoConsultorio=" + pisoConsultorio + ", estado="
-                + estado + "]";
+        return "Consultorio [Numero = " + numConsultorio + ", Piso =" + pisoConsultorio + ", Estado=" + estado + "]";
     }
 
     

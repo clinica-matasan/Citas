@@ -77,7 +77,7 @@ public class App {
                 gestionConsultorio.registrarConsultorio(Agregado);
              
                 }else{
-                    System.out.println("Error : El consultorio " + numConsultorio + "" +"DEl píso" + pisoConsultorio+ "ya tiene su capacidad Maxima");
+                    System.out.println("Error : Solo tenemos 10 Consultorios en el area Metropolitana");
                 } 
                    
                 break;
