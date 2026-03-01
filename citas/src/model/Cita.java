@@ -7,7 +7,7 @@ public class Cita {
     private int idMedico;
     private String fechaHora;
     private String estado;
-
+    
      public Cita (){
         
     }
@@ -18,19 +18,20 @@ public class Cita {
 		this.idMedico = idMedico;
 		this.fechaHora = fechaHora;
 		this.estado = estado;
+      
 	 }
 
-	 public int getIdCita() {
+
+
+     public int getIdCita() {
 		 return idCita;
 	 }
 
 	 public void setIdCita(int idCita) {
-        if (idCita > 0) {
+        
             this.idCita = idCita;
-        }else{
-            System.out.println("Ud es como mongólico, ponga ese id bien");
-        }
-		 
+        
+		
 	 }
 
 	 public int getIdPaciente() {
@@ -38,7 +39,7 @@ public class Cita {
 	 }
 
 	 public void setIdPaciente(int idPaciente) {
-        if (idPaciente > 0) {
+        if (idPaciente < 0) {
             this.idPaciente = idPaciente;
         }else{
             System.out.println("Ud es como mongólico, ponga ese id paciente bien");
@@ -51,7 +52,7 @@ public class Cita {
 	 }
 
 	 public void setIdMedico(int idMedico) {
-         if (idMedico > 0) {
+         if (idMedico < 0) {
             this.idMedico = idMedico;
         }else{
             System.out.println("Ud es como mongólico, ponga el id del medico bien, que falta de respeto");
@@ -85,7 +86,7 @@ public class Cita {
         }
 		 
 	 }
-
+    
 }
 
 
