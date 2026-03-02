@@ -1,11 +1,11 @@
-package model;
+ package model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class gestorConsultorio {
 
-    private List<Consultorio> listaConsultorios = new ArrayList<>();
+   private List<Consultorio> listaConsultorios = new ArrayList<>();
 
     public gestorConsultorio(){
         

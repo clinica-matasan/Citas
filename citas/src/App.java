@@ -1,14 +1,16 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-import model.Cita;
-import model.Consultorio;
-import model.gestorCitas;
-import model.gestorConsultorio;
+import model.*;
+
 
 public class App {
+     private static List<Paciente> listaPacientes = new ArrayList<>();
     public static void main(String[] args)  {
 
         Scanner sc= new Scanner(System.in);
+        boolean salir = false;
         gestorCitas gestor = new gestorCitas();
         gestorConsultorio  gestionConsultorio = new gestorConsultorio();
 
@@ -16,20 +18,68 @@ public class App {
 
         do{
 
-        System.out.println("BIENVENIDO AL SISTEMA DE CITAS CABALLERO");
-        System.out.println("Por favor seleccione una opción de tantas caballero");
-        System.out.println("1.Para registar una cita");
-        System.out.println("2.Para mostrar la cita");
-        System.out.println("3.para registrar Consultorio");
-        System.out.println("4.para mostar el consultorio");
-        System.out.println("5. Salir porque esto no sirve");
+        System.out.println("BIENVENIDO AL SISTEMA DE CITAS");
+        System.out.println("Por favor seleccione una opción");
+        System.out.println("1.Registro paciente");
+        System.out.println("2.Consutar medico");
+        System.out.println("3.Programar Cita");
+        System.out.println("4.Consultar consultorio");
+        System.out.println("5.Consultar Cuota moderada");
+        System.out.println("6. Salir porque esto no sirve");
+   
+
         opcion = sc.nextInt();
 
         switch(opcion){
 
             case 1:
+                System.out.println("BIENVENIDO AL SISTEMA DE GESTIÓN DE PACIENTES");
+
+                while (!salir) {
+                    System.out.println("\n1. Registrar Paciente");
+                    System.out.println("2. Ver Lista de Pacientes");
+                    System.out.println("3. Salir");
+                    System.out.print("Selecciona una opción: ");
+
+                    int elegir = sc.nextInt();
+                    sc.nextLine();
+
+                    System.out.print("Ingrese Nombre: ");
+                    String nombre = sc.nextLine();
+                    System.out.print("Ingrese cedula: ");
+                    String cedula = sc.nextLine();
+                    System.out.print("Ingrese Edad: ");
+                    int edad = sc.nextInt();
+                    sc.nextLine(); 
+                    System.out.print("Ingrese EPS: ");
+                    String EPS = sc.nextLine();
+                    if (elegir == 1) {
+   
+                    Paciente nuevoPaciente = new Paciente(nombre, cedula, edad, EPS);
+                    listaPacientes.add(nuevoPaciente);
+                    } else if (elegir == 2) {
+   
+                    for (Paciente p : listaPacientes) { System.out.println(p); }
+                    } else if (elegir == 3) {
+                            salir = true;
+                       }
                 
-                System.out.println("Está en el apartado para registrar su cita");
+
+                    Paciente nuevoPaciente = new Paciente(nombre, cedula, edad, EPS);
+
+                    listaPacientes.add(nuevoPaciente);
+                    System.out.println("¡Paciente registrado con éxito!");
+
+                    nuevoPaciente.toString();
+                 
+                }
+                break;
+            case 2:
+                // Consultar medico
+               
+                break;
+            case 3:
+                  System.out.println("Está en el apartado para registrar su cita");
 
                 System.out.print("deme el id de su cita: ");
                     int idCita = sc.nextInt();
@@ -56,13 +106,12 @@ public class App {
                               System.out.println("Ud es como mongólico, ponga ese id paciente bien");
                     }
 
-                    
+                     gestor.mostrarCitas();
+               
+                   
                 break;
-            case 2:
-                gestor.mostrarCitas();
-                break;
-            case 3:
-                System.out.println("Hola bienvenido al sistema de Registro del consultorio");
+            case 4 :
+                 System.out.println("Hola bienvenido al sistema de Registro del consultorio");
 
                 System.out.println("ingresa el Consultorio mas sercano a tu residencia");
                 System.out.println("Recuerda que tenemos 10 en todo Medellin");
@@ -79,19 +128,26 @@ public class App {
              
                 }else{
                     System.out.println("Error : Solo tenemos 10 Consultorios en el area Metropolitana");
-                    break;
-                } 
-                   
-                break;
-            case 4 :
+                
+                }
+
                 gestionConsultorio.mostrarConsultorios();
-                break;    
+                
+                break; 
+            case 5:
+                // cuota moderada
+                break;  
+            case 6 :
+                System.out.println("Muchas gracias por usar nuestro servicio");
+                break;         
             default:
-                System.out.println("Caballero, es usted un ser sin cerebro que no sabe utilizar un programa");
+                System.out.println("Error, Opcion invalida");
         }
 
-        }while(opcion !=5);
-
+    }while(opcion !=6);
+        
         sc.close();
-    }
+        }
 }
+
+
