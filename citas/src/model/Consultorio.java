@@ -5,7 +5,7 @@ public class Consultorio {
     private int numConsultorio;
     private int pisoConsultorio;
     private String estado;
-    private  Cita cita;
+  
     
 
     public Consultorio(){

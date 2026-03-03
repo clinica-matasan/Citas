@@ -82,7 +82,39 @@ public class App {
                 }
                 break;
             case 2:
-                // Consultar medico
+                int id;
+                do {
+                      System.out.println("Bienvenido al sitema de elecion de medico");
+                      System.out.println("En que área lo buscas");
+                      System.out.println("1) Cardiología");
+                      System.out.println("2) Pediatría");
+                      System.out.println("3) Neurología");
+                      System.out.println(" 4) salir");
+
+                      id = sc.nextInt();
+                      sc.nextLine(); 
+                    
+                
+                switch (id) {
+            case 1:
+                System.out.println("id: 1 , Nombre: Dr. Alberto Ruiz , Especialidad: Cardiología");
+                break;
+            case 2:
+                System.out.println("id: 2 , Nombre: Dra. Elena Beltrán , Especialidad: Pediatría");
+                break;
+            case 3:
+                System.out.println("id: 3 , Nombre: Dr. Isaac Newton , Especialidad: Neurología");
+                break;
+            case 4:
+                System.out.println("Gracias por preferirnos");
+
+                break;
+            default:
+                System.out.println("Error: El id ingresado no corresponde a ningun medico en el sistema.");
+        }
+        
+         } while (id != 4);
+                
                
                 break;
             case 3:
@@ -110,7 +142,7 @@ public class App {
                     gestor.agregarCita(nuevaCita);
 
                     }else{
-                              System.out.println("Ud es como mongólico, ponga ese id paciente bien");
+                              System.out.println("Error opcion invalida vuelve a intentar");
                     }
 
                      gestor.mostrarCitas();
