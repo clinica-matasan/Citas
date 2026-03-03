@@ -34,52 +34,51 @@ public class App {
 
             case 1:
                 System.out.println("BIENVENIDO AL SISTEMA DE GESTIÓN DE PACIENTES");
+                salir = false; 
 
-                while (!salir) {
+                do {
                     System.out.println("\n1. Registrar Paciente");
                     System.out.println("2. Ver Lista de Pacientes");
-                    System.out.println("3. Salir");
+                    System.out.println("3. Volver al Menú Principal");
                     System.out.print("Selecciona una opción: ");
 
                     int elegir = sc.nextInt();
                     sc.nextLine();
 
-                     if (elegir == 1) {
-                    System.out.print("Ingrese Nombre: ");
-                    String nombre = sc.nextLine();
-                    System.out.print("Ingrese cedula: ");
-                    String cedula = sc.nextLine();
-                    System.out.print("Ingrese Edad: ");
-                    int edad = sc.nextInt();
-                    sc.nextLine(); 
-                    System.out.print("Ingrese EPS: ");
-                    String EPS = sc.nextLine();
-                    
-                    Paciente nuevoPaciente = new Paciente(nombre, cedula, edad, EPS);
+                    if (elegir == 1) {
+                        System.out.print("Ingrese Nombre: ");
+                        String nombre = sc.nextLine();
+                        System.out.print("Ingrese cédula: ");
+                        String cedula = sc.nextLine();
+                        System.out.print("Ingrese Edad: ");
+                        int edad = sc.nextInt();
+                        sc.nextLine();
+                        System.out.print("Ingrese EPS: ");
+                        String EPS = sc.nextLine();
 
-                    listaPacientes.add(nuevoPaciente);
-                    System.out.println("¡Paciente registrado con éxito!");
-                   
+                        Paciente nuevoPaciente = new Paciente(nombre, cedula, edad, EPS);
+                        listaPacientes.add(nuevoPaciente);
+                        System.out.println("¡Paciente registrado con éxito!");
+
                     } else if (elegir == 2) {
-                        if(listaPacientes.isEmpty()){
-                            System.out.println("No hay Pacientes Registrados");
-                        }else{
-                            System.out.println("Lista de pacientes Registrados");
-                             for (Paciente p : listaPacientes) { 
-                               System.out.println(p.toString()); }
+                        if (listaPacientes.isEmpty()) {
+                            System.out.println("No hay pacientes registrados.");
+                        } else {
+                            System.out.println("Lista de Pacientes Registrados");
+                            for (Paciente p : listaPacientes) {
+                                System.out.println(p.toString());
+                            }
                         }
-   
-                   
+
                     } else if (elegir == 3) {
-                            salir = true;
-                            
-                       }
-                
+                        System.out.println("Saliendo del sistema de pacientes...");
+                        salir = true; 
+                    } else {
+                        System.out.println("Opción no válida.");
+                    }
 
+                } while (!salir);
 
-                   
-                 
-                }
                 break;
             case 2:
                 int id;
