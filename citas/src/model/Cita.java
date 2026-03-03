@@ -13,11 +13,11 @@ public class Cita {
     }
 
 	 public Cita(int idCita, int idPaciente, int idMedico, String fechaHora, String estado) {
-		this.idCita = idCita;
-		this.idPaciente = idPaciente;
-		this.idMedico = idMedico;
-		this.fechaHora = fechaHora;
-		this.estado = estado;
+			this.setIdCita(idCita);
+			this.setIdPaciente(idPaciente); 
+			this.setIdMedico(idMedico);
+			this.setFechaHora(fechaHora);
+			this.setEstado(estado);
       
 	 }
 
@@ -39,10 +39,11 @@ public class Cita {
 	 }
 
 	 public void setIdPaciente(int idPaciente) {
-        if (idPaciente < 0) {
+        if (idPaciente >= 1) {
             this.idPaciente = idPaciente;
         }else{
             System.out.println("Ud es como mongólico, ponga ese id paciente bien");
+			System.exit(1);
         }
 		 
 	 }
@@ -52,10 +53,11 @@ public class Cita {
 	 }
 
 	 public void setIdMedico(int idMedico) {
-         if (idMedico < 0) {
+         if (idMedico >=1) {
             this.idMedico = idMedico;
         }else{
             System.out.println("Ud es como mongólico, ponga el id del medico bien, que falta de respeto");
+			System.exit(1);
         }
 		 
 	 }
@@ -69,6 +71,7 @@ public class Cita {
         this.fechaHora = fechaHora;
     } else {
         System.out.println("Error: La fecha y hora no pueden estar vacías sapo");
+		System.exit(1);
     }
 	 }
 
@@ -83,6 +86,7 @@ public class Cita {
             this.estado = estado;
         }else{
             System.out.println("Error, no hay cita");
+			System.exit(1);
         }
 		 
 	 }
