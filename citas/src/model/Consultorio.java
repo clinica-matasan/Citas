@@ -5,6 +5,8 @@ public class Consultorio {
     private int numConsultorio;
     private int pisoConsultorio;
     private String estado;
+    private  Cita cita;
+    
 
     public Consultorio(){
 
@@ -40,6 +42,7 @@ public class Consultorio {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+   
     @Override
     public String toString() {
         return "Consultorio [Numero = " + numConsultorio + ", Piso =" + pisoConsultorio + ", Estado=" + estado + "]";
